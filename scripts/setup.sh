@@ -26,8 +26,10 @@ pip install -q kokoro-onnx soundfile 2>/dev/null || true
 
 [ -n "$SKIP_HEAVY" ] && { echo "SKIP_HEAVY set: done"; exit 0; }
 
-echo "== torch 2.8.0 + torchaudio + torchvision + whisperx (PyPI build; CPU index is blocked here)"
-uv pip install -q --python .venv/bin/python torch==2.8.0 torchaudio==2.8.0 torchvision==0.23.0 whisperx==3.8.6
+echo "== torch 2.8.0+cpu + torchaudio + torchvision + whisperx (needs download.pytorch.org + download-r2.pytorch.org)"
+uv pip install -q --python .venv/bin/python --index-strategy unsafe-best-match \
+  torch==2.8.0+cpu torchaudio==2.8.0+cpu torchvision==0.23.0+cpu whisperx==3.8.6 \
+  --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
 
 echo "== FFmpeg 8.1 (BtbN static build) -> /usr/local/bin"
 if [ ! -x "$V/ffmpeg/bin/ffmpeg" ]; then
@@ -55,6 +57,19 @@ echo "== Blender as Python module (bpy 4.2.0, Python 3.11)"
 if [ ! -x "$V/blender-venv/bin/python" ]; then
   uv venv -q "$V/blender-venv" --python 3.11
   uv pip install -q --python "$V/blender-venv/bin/python" bpy==4.2.0
+fi
+
+echo "== Blender 4.2.9 (needs download.blender.org)"
+if [ ! -x "$V/blender/blender" ]; then
+  mkdir -p "$V/blender" && curl -sL https://download.blender.org/release/Blender4.2/blender-4.2.9-linux-x64.tar.xz \
+    | tar xJ -C "$V/blender" --strip-components=1 || echo "WARN: Blender download failed"
+fi
+
+echo "== Google Chrome stable, extracted (needs dl.google.com)"
+if [ ! -x "$V/chrome/opt/google/chrome/chrome" ]; then
+  mkdir -p "$V/chrome" && curl -sL -o "$V/chrome/c.deb" https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+    && dpkg-deb -x "$V/chrome/c.deb" "$V/chrome" && rm "$V/chrome/c.deb" || echo "WARN: Chrome download failed"
+  command -v apt-get >/dev/null && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq libnss3 libgbm1 libasound2t64 >/dev/null 2>&1 || true
 fi
 
 echo "setup done"
