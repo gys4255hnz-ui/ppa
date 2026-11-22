@@ -9,19 +9,43 @@
     "om": "huashu-motion"
   },
   "dependencies": {
+    "@babylonjs/core": "^9.37.1",
+    "@createjs/tweenjs": "^2.0.0-beta.4",
+    "@dimforge/rapier3d-compat": "^0.21.0",
     "@fontsource/noto-serif-jp": "^5.3.1",
+    "@motion-canvas/2d": "^3.17.2",
+    "@motion-canvas/core": "^3.17.2",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@react-three/postprocessing": "^3.2.2",
+    "@react-three/rapier": "^2.2.0",
     "@remotion/bundler": "^4.0.545",
     "@remotion/cli": "^4.0.545",
     "@remotion/renderer": "^4.0.545",
+    "@remotion/three": "^4.0.545",
+    "animejs": "^4.5.0",
     "d3-geo": "^3.1.2",
+    "gifenc": "^1.0.3",
     "gsap": "^3.15.1",
     "huashu-motion": "^0.6.0",
     "hyperframes": "^0.9.82",
+    "konva": "^10.10.0",
+    "lottie-web": "^5.13.0",
+    "lume": "^0.3.0-alpha.46",
+    "motion": "^14.14.0",
+    "ola": "^1.2.2",
+    "playwright-core": "^1.65.1",
+    "postprocessing": "^6.39.6",
+    "proton-engine": "^7.1.5",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "remotion": "^4.0.545",
+    "shifty": "^3.0.6",
     "three": "^0.187.0",
+    "three.quarks": "^0.18.0",
     "topojson-client": "^3.1.0",
+    "tweakpane": "^4.0.5",
+    "two.js": "^0.8.24",
     "world-atlas": "^2.0.2"
   },
   "devDependencies": {
@@ -30,5 +54,8 @@
     "@types/three": "^0.187.0",
     "@types/topojson-client": "^3.1.5",
     "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "classy-solid": "0.4.3"
   }
 }
