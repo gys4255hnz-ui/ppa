@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx remotion *)",
+      "Bash(npx hyperframes *)",
+      "Bash(npx huashu-motion *)",
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(ffmpeg *)",
+      "Bash(ffprobe *)",
+      "Bash(node *)",
+      "Bash(python3 *)",
+      "Bash(uvx blender-mcp *)",
+      "Bash(./scripts/setup.sh)",
+      "Edit(out/**)",
+      "Edit(src/**)"
+    ]
+  },
+  "enabledMcpjsonServers": ["blender"]
+}
