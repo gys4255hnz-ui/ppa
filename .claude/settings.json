@@ -16,5 +16,6 @@
       "Edit(src/**)"
     ]
   },
-  "enabledMcpjsonServers": ["blender"]
+  "enabledMcpjsonServers": ["blender"],
+  "language": "japanese"
 }

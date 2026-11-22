@@ -1,5 +1,7 @@
 # AI video studio
 
+**返事はいつも日本語で。専門用語は使わず、わかりやすい言葉で説明すること。**
+
 Pipeline: topic → script → motion → score → export (MP4 via FFmpeg).
 
 ## Setup in a fresh container
