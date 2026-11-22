@@ -9,20 +9,26 @@
     "om": "huashu-motion"
   },
   "dependencies": {
+    "@fontsource/noto-serif-jp": "^5.3.1",
     "@remotion/bundler": "^4.0.545",
     "@remotion/cli": "^4.0.545",
     "@remotion/renderer": "^4.0.545",
+    "d3-geo": "^3.1.2",
     "gsap": "^3.15.1",
     "huashu-motion": "^0.6.0",
     "hyperframes": "^0.9.82",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "remotion": "^4.0.545",
-    "three": "^0.187.0"
+    "three": "^0.187.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
     "@types/react": "^19.3.0",
     "@types/three": "^0.187.0",
+    "@types/topojson-client": "^3.1.5",
     "typescript": "^7.0.2"
   }
 }
