@@ -12,15 +12,15 @@ export const FPS = 30;
 const s = (sec: number) => Math.round(sec * FPS);
 
 // Scene starts (seconds). Each scene overlaps the next by a 0.5 s crossfade.
-const SCENES = { town: 0, map: 6.5, yagen: 14.5, scroll: 20.5, end: 28, total: 31 };
+const SCENES = { town: 0, map: 8.3, yagen: 20.0, scroll: 27.3, end: 37.8, total: 41 };
 
-// Narration: kana audio (for correct reading), kanji subtitles. Durations measured from the wavs.
+// Narration: VOICEVOX (No.7 読み聞かせ, x1.1), kanji subtitles. Durations measured from the wavs.
 const LINES = [
-  { id: "l1", at: 0.8, dur: 4.93, text: "江戸時代。医者にかかれない人々は\nどうやって病気を治していたのでしょう。" },
-  { id: "l2", at: 6.8, dur: 2.37, text: "頼りにしたのは、富山の薬売り。" },
-  { id: "l3", at: 9.6, dur: 4.91, text: "家に薬箱を預け、使った分だけお代をもらう\n「置き薬」です。" },
-  { id: "l4", at: 15.0, dur: 3.71, text: "中身は、草や根を薬研ですりつぶした「生薬」でした。" },
-  { id: "l5", at: 21.0, dur: 6.25, text: "そして1774年。『解体新書』が世に出て\n西洋の医学が広まっていきます。" },
+  { id: "l1", at: 0.8, dur: 6.7, text: "江戸時代。医者にかかれない人々は\nどうやって病気を治していたのでしょう。" },
+  { id: "l2", at: 8.6, dur: 3.32, text: "頼りにしたのは、富山の薬売り。" },
+  { id: "l3", at: 12.3, dur: 7.02, text: "家に薬箱を預け、使った分だけお代をもらう\n「置き薬」です。" },
+  { id: "l4", at: 20.5, dur: 6.15, text: "中身は、草や根を薬研ですりつぶした「生薬」でした。" },
+  { id: "l5", at: 27.8, dur: 8.96, text: "そして1774年。『解体新書』が世に出て\n西洋の医学が広まっていきます。" },
 ];
 
 export const DURATION = s(SCENES.total);
@@ -50,13 +50,13 @@ export const EdoFilm: React.FC = () => {
         <TownScene duration={s(SCENES.map - SCENES.town) + 15} />
       </Scene>
       <Scene from={SCENES.map} to={SCENES.yagen}>
-        <MapScene duration={s(SCENES.yagen - SCENES.map) + 15} cardAt={s(9.9 - SCENES.map)} />
+        <MapScene duration={s(SCENES.yagen - SCENES.map) + 15} cardAt={s(12.6 - SCENES.map)} />
       </Scene>
       <Scene from={SCENES.yagen} to={SCENES.scroll}>
-        <YagenScene duration={s(SCENES.scroll - SCENES.yagen) + 15} labelAt={s(15.9 - SCENES.yagen)} />
+        <YagenScene duration={s(SCENES.scroll - SCENES.yagen) + 15} labelAt={s(21.8 - SCENES.yagen)} />
       </Scene>
       <Scene from={SCENES.scroll} to={SCENES.end}>
-        <ScrollScene duration={s(SCENES.end - SCENES.scroll) + 15} labelAt={s(21.4 - SCENES.scroll)} />
+        <ScrollScene duration={s(SCENES.end - SCENES.scroll) + 15} labelAt={s(28.4 - SCENES.scroll)} />
       </Scene>
       <Scene from={SCENES.end} to={SCENES.total}>
         <EndScene />
@@ -71,7 +71,7 @@ export const EdoFilm: React.FC = () => {
       {/* audio */}
       {LINES.map((l) => (
         <Sequence key={l.id} from={s(l.at)}>
-          <Audio src={staticFile(`edo/${l.id}.wav`)} volume={1} />
+          <Audio src={staticFile(`edo/vv/${l.id}.wav`)} volume={1} />
         </Sequence>
       ))}
       <Audio

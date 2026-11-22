@@ -34,7 +34,7 @@ def pluck(freq, dur, bright=0.5):
     return out_ * env
 
 # --- koto-like BGM, miyako-bushi on D ---
-T = 31.5
+T = float(sys.argv[2]) if len(sys.argv) > 2 else 31.5
 bgm = np.zeros(int(SR * T))
 D4 = 293.66
 scale = [1, 16/15, 4/3, 3/2, 8/5, 2, 32/15, 8/3]
