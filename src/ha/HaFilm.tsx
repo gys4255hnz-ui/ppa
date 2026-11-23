@@ -38,7 +38,7 @@ const TEXT: Record<string, string> = {
 };
 const ORDER = Object.keys(TEXT);
 const DUR = durations as Record<string, number>;
-const GAP = 0.45;
+const GAP = 0.35;
 const EXTRA_AFTER: Record<string, number> = { p5: 2.4, c1: 0.7, c3: 0.3, c13: 0.2, c18: 0.6 };
 const EXTRA_BEFORE: Record<string, number> = { c1: 0.6 };
 
