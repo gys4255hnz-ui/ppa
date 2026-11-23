@@ -130,6 +130,7 @@ export const Subtitle: React.FC<{ text: string; from: number; to: number }> = ({
           textAlign: "center",
           lineHeight: 1.45,
           whiteSpace: "pre-line",
+          maxWidth: 1560,
           textShadow: "0 0 8px rgba(0,0,0,0.9), 0 3px 3px rgba(0,0,0,0.8), 0 0 2px #000",
           letterSpacing: 2,
         }}
